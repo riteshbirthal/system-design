@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Light Theme (Default) - Clean White & Blue */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #eff6ff;
+  --bg-input: #ffffff;
+  
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+  --text-on-accent: #ffffff;
+  
+  --border-color: #e2e8f0;
+  --border-light: #f1f5f9;
+  
+  --accent-primary: #2563eb;
+  --accent-primary-hover: #1d4ed8;
+  --accent-primary-light: #dbeafe;
+  --accent-secondary: #3b82f6;
+  --accent-success: #16a34a;
+  --accent-success-light: #dcfce7;
+  --accent-warning: #d97706;
+  --accent-warning-light: #fef3c7;
+  --accent-danger: #dc2626;
+  --accent-info: #0284c7;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  --gradient-accent: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  
+  /* Week view specific - light theme */
+  --week-card-bg: #ffffff;
+  --week-card-hover-bg: #f1f5f9;
+  --week-card-hover-text: #0f172a;
+  --week-header-hover-bg: #f1f5f9;
+  --week-content-bg: #f8fafc;
+  --week-expanded-bg: #f1f5f9;
+  --week-content-hover-text: #2563eb;
+  
+  /* Day card specific */
+  --day-card-bg: #ffffff;
+  --day-card-border: #e2e8f0;
+  --day-card-hover-bg: #eff6ff;
+  --day-card-hover-border: #2563eb;
+  --day-badge-bg: #2563eb;
+  --day-header-hover: #f8fafc;
+  --day-content-bg: #f8fafc;
+  
+  /* Resource section colors */
+  --resource-video-border: #2563eb;
+  --resource-article-border: #16a34a;
+  --resource-quiz-border: #7c3aed;
+  --resource-assignment-border: #d97706;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #020617;
+  --bg-secondary: #0f172a;
+  --bg-tertiary: #0f172a;
+  --bg-card: #0f172a;
+  --bg-card-hover: #1e293b;
+  --bg-input: #0f172a;
+  
+  --text-primary: #f1f5f9;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-inverse: #0f172a;
+  --text-on-accent: #ffffff;
+  
+  --border-color: #1e293b;
+  --border-light: #334155;
+  
+  --accent-primary: #3b82f6;
+  --accent-primary-hover: #60a5fa;
+  --accent-primary-light: #1e3a5f;
+  --accent-secondary: #60a5fa;
+  --accent-success: #22c55e;
+  --accent-success-light: #14532d;
+  --accent-warning: #f59e0b;
+  --accent-warning-light: #713f12;
+  --accent-danger: #ef4444;
+  --accent-info: #38bdf8;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  
+  --gradient-primary: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  --gradient-accent: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+  
+  /* Week view specific - dark theme */
+  --week-card-bg: #020617;
+  --week-card-hover-bg: #e2e8f0;
+  --week-card-hover-text: #0f172a;
+  --week-header-hover-bg: #e2e8f0;
+  --week-content-bg: #0f172a;
+  --week-expanded-bg: #020617;
+  --week-content-hover-text: #3b82f6;
+  
+  /* Day card specific - dark theme */
+  --day-card-bg: #0f172a;
+  --day-card-border: #1e293b;
+  --day-card-hover-bg: #1e293b;
+  --day-card-hover-border: #3b82f6;
+  --day-badge-bg: #2563eb;
+  --day-header-hover: #1e293b;
+  --day-content-bg: #020617;
+  
+  /* Resource section colors - dark theme */
+  --resource-video-border: #3b82f6;
+  --resource-article-border: #22c55e;
+  --resource-quiz-border: #a78bfa;
+  --resource-assignment-border: #f59e0b;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

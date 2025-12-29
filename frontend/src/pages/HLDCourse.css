@@ -1,0 +1,736 @@
+.hld-course {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hld-header {
+  background: var(--gradient-accent);
+  border-radius: 16px;
+  padding: 30px;
+  color: var(--text-on-accent);
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.hld-header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hld-icon {
+  font-size: 3.5rem;
+}
+
+.hld-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 1.8rem;
+}
+
+.hld-header p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.hld-stats {
+  display: flex;
+  gap: 30px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.hld-content {
+  background: var(--week-card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+}
+
+.weeks-list {
+  padding: 0;
+}
+
+.week-card {
+  background: var(--week-card-bg);
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.week-card:last-child {
+  border-bottom: none;
+}
+
+.week-card:hover {
+  background: var(--week-card-hover-bg);
+}
+
+.week-card:hover .week-header {
+  border-left-color: var(--accent-primary);
+}
+
+.week-card:hover .week-info h3 {
+  font-weight: 700;
+}
+
+.week-card:hover .expand-arrow {
+  font-weight: 700;
+}
+
+.week-card.expanded {
+  background: var(--week-expanded-bg);
+}
+
+.week-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.week-header:hover {
+  background: var(--week-header-hover-bg);
+}
+
+
+.week-card.expanded .week-header {
+  background: transparent;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.week-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.week-badge {
+  background: var(--accent-primary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-on-accent);
+}
+
+.week-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.phase-tag {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  color: white;
+  font-weight: 500;
+}
+
+.expand-arrow {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  transition: transform 0.3s ease;
+}
+
+.expand-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.week-content {
+  padding: 15px 20px 20px;
+  background: var(--week-content-bg);
+}
+
+/* Hover effects for expanded week content */
+.day-card-link:hover .day-info-compact h4 {
+  font-weight: 700;
+}
+
+.day-card-link:hover .day-info-compact p {
+  font-weight: 600;
+}
+
+.loading-message {
+  text-align: center;
+  padding: 30px;
+  color: var(--text-secondary);
+}
+
+.coming-soon {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+}
+
+.coming-soon span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.days-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+}
+
+/* Compact Day Card Link Styles */
+.day-card-link {
+  text-decoration: none;
+  display: block;
+  background: var(--day-card-bg);
+  border-radius: 8px;
+  border: 1px solid var(--day-card-border);
+  transition: all 0.2s ease;
+}
+
+.day-card-link:hover {
+  background: var(--day-card-hover-bg);
+  border-color: var(--day-card-hover-border);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+
+.day-card-link.practice {
+  border-left: 3px solid var(--accent-warning);
+}
+
+.day-card-link.hands-on {
+  border-left: 3px solid var(--accent-success);
+}
+
+.day-card-link.content {
+  border-left: 3px solid var(--accent-primary);
+}
+
+.day-card-compact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+}
+
+.day-badge {
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.day-badge.practice {
+  background: var(--accent-warning);
+}
+
+.day-badge.hands-on {
+  background: var(--accent-success);
+}
+
+.day-info-compact {
+  flex: 1;
+  min-width: 0;
+}
+
+.day-info-compact h4 {
+  margin: 0 0 2px 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.day-info-compact p {
+  margin: 0;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.day-type-indicator {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.day-arrow-link {
+  color: var(--accent-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.day-card-link:hover .day-arrow-link {
+  opacity: 1;
+}
+
+/* Keep legacy styles for backwards compatibility */
+.day-card {
+  background: var(--day-card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--day-card-border);
+  transition: all 0.2s ease;
+}
+
+.day-meta {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.resource-counts {
+  display: flex;
+  gap: 8px;
+}
+
+.resource-counts .count {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 10px;
+  background: var(--day-card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.resource-counts .count.video { background: var(--accent-primary-light); color: var(--accent-primary); }
+.resource-counts .count.article { background: var(--accent-success-light); color: var(--accent-success); }
+.resource-counts .count.quiz { background: rgba(124, 58, 237, 0.15); color: #7c3aed; }
+.resource-counts .count.assignment { background: var(--accent-warning-light); color: var(--accent-warning); }
+
+.day-arrow {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  transition: transform 0.3s ease;
+}
+
+.day-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.day-content {
+  padding: 20px;
+  background: var(--day-content-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+.no-content {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 20px;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.resource-section {
+  background: var(--day-card-bg);
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+}
+
+.resource-section h5 {
+  margin: 0 0 12px 0;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.resource-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: var(--week-content-bg);
+  border-radius: 8px;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+  color: var(--text-primary);
+}
+
+.resource-item:last-child {
+  margin-bottom: 0;
+}
+
+.resource-item:hover {
+  background: var(--day-card-hover-bg);
+  transform: translateX(4px);
+}
+
+.resource-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.resource-title {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.resource-meta {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.play-icon, .read-icon, .quiz-icon, .assignment-icon {
+  font-size: 1rem;
+  color: var(--accent-primary);
+}
+
+.video-section { border-left: 3px solid var(--resource-video-border); }
+.article-section { border-left: 3px solid var(--resource-article-border); }
+.quiz-section { border-left: 3px solid var(--resource-quiz-border); }
+.assignment-section { border-left: 3px solid var(--resource-assignment-border); }
+
+.weekly-assessment {
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--day-card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.weekly-assessment h5 {
+  margin: 0 0 15px 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.assessment-items {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.assessment-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  background: var(--week-content-bg);
+  border-radius: 10px;
+  text-decoration: none;
+  flex: 1;
+  min-width: 250px;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+  color: var(--text-primary);
+}
+
+.assessment-item.quiz {
+  border-left: 3px solid var(--resource-quiz-border);
+}
+
+.assessment-item.project {
+  border-left: 3px solid var(--resource-assignment-border);
+}
+
+.assessment-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background: var(--day-card-hover-bg);
+}
+
+.assessment-icon {
+  font-size: 1.5rem;
+}
+
+.assessment-title {
+  display: block;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.assessment-meta {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .hld-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hld-header-content {
+    flex-direction: column;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .day-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .week-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* Practice and Hands-On Day Styles */
+.day-card.practice {
+  border-color: var(--accent-warning);
+  background: linear-gradient(135deg, rgba(255, 152, 0, 0.08) 0%, var(--day-card-bg) 100%);
+}
+
+.day-card.hands-on {
+  border-color: var(--accent-success);
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.08) 0%, var(--day-card-bg) 100%);
+}
+
+.day-badge.practice {
+  background: linear-gradient(135deg, #ffb74d 0%, #ffa726 100%);
+}
+
+.day-badge.hands-on {
+  background: linear-gradient(135deg, #81c784 0%, #66bb6a 100%);
+}
+
+.day-type-tag {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.day-type-tag.practice {
+  background: var(--accent-warning-light);
+  color: var(--accent-warning);
+}
+
+.day-type-tag.hands-on {
+  background: var(--accent-success-light);
+  color: var(--accent-success);
+}
+
+.go-to-day-btn {
+  padding: 6px 14px;
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.go-to-day-btn:hover {
+  background: var(--accent-primary-hover);
+  transform: translateY(-1px);
+}
+
+.practice-day-content,
+.hands-on-day-content {
+  text-align: center;
+  padding: 30px;
+}
+
+.practice-icon,
+.hands-on-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.practice-day-content h4,
+.hands-on-day-content h4 {
+  margin: 0 0 10px 0;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+}
+
+.practice-day-content p,
+.hands-on-day-content p {
+  margin: 0 0 20px 0;
+  color: var(--text-secondary);
+}
+
+.start-practice-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: var(--accent-warning);
+  color: var(--text-on-accent);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.start-practice-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+.hands-on-items {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.hands-on-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  background: var(--day-card-bg);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.hands-on-item span {
+  font-size: 1.5rem;
+}
+
+.hands-on-item strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.hands-on-item p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.start-hands-on-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: var(--accent-success);
+  color: var(--text-on-accent);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.start-hands-on-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+.no-content-wrapper {
+  text-align: center;
+  padding: 20px;
+}
+
+.view-day-btn,
+.view-full-day-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.view-day-btn:hover,
+.view-full-day-btn:hover {
+  background: var(--accent-primary-hover);
+  transform: translateY(-2px);
+}
+
+.view-full-day-btn {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .hld-course {
+    padding: 1rem;
+  }
+
+  .hld-header {
+    padding: 20px;
+  }
+
+  .hld-icon {
+    font-size: 2.5rem;
+  }
+
+  .hld-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .hld-stats {
+    gap: 20px;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .day-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .day-meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .assessment-items {
+    flex-direction: column;
+  }
+
+  .assessment-item {
+    min-width: auto;
+  }
+}

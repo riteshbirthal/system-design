@@ -1,0 +1,239 @@
+.course-day-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.day-header {
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--accent-primary);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  font-weight: 600;
+}
+
+.day-header h1 {
+  color: var(--text-primary);
+  font-size: 2rem;
+}
+
+.day-content-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.day-section {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.day-section h2 {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.tutorial-card,
+.content-card,
+.quiz-card,
+.assignment-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.tutorial-card:last-child,
+.content-card:last-child,
+.quiz-card:last-child,
+.assignment-card:last-child {
+  margin-bottom: 0;
+}
+
+.tutorial-info h3,
+.content-info h3,
+.quiz-info h3,
+.assignment-info h3 {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.tutorial-info p,
+.quiz-info p,
+.assignment-info p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.tutorial-meta,
+.content-meta,
+.quiz-meta,
+.assignment-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tutorial-meta span,
+.content-meta span,
+.quiz-meta span,
+.assignment-meta span {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  background: var(--bg-card);
+  color: var(--text-muted);
+}
+
+.difficulty.beginner {
+  background: var(--accent-success-light);
+  color: var(--accent-success);
+}
+
+.difficulty.intermediate {
+  background: var(--accent-warning-light);
+  color: var(--accent-warning);
+}
+
+.difficulty.advanced {
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--accent-danger);
+}
+
+.duration {
+  background: var(--accent-primary-light) !important;
+  color: var(--accent-primary) !important;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.75rem;
+  background: var(--bg-tertiary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  color: var(--text-muted);
+}
+
+.view-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.view-btn:hover {
+  background: var(--accent-primary-hover);
+}
+
+.view-btn.quiz-btn {
+  background: var(--resource-quiz-border);
+}
+
+.view-btn.quiz-btn:hover {
+  filter: brightness(1.1);
+}
+
+.view-btn.assignment-btn {
+  background: var(--resource-assignment-border);
+}
+
+.view-btn.assignment-btn:hover {
+  filter: brightness(1.1);
+}
+
+.no-content {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  color: var(--text-muted);
+}
+
+.no-content h2 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.day-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.nav-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: var(--bg-card-hover);
+  font-weight: 600;
+}
+
+.nav-btn.prev::before {
+  content: '← ';
+}
+
+.nav-btn.next::after {
+  content: ' →';
+}
+
+.loading,
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .tutorial-card,
+  .content-card,
+  .quiz-card,
+  .assignment-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .view-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
