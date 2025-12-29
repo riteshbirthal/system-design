@@ -10,12 +10,15 @@ services:
         source: /*
         destination: /index.html
 
-  # Backend Web Service
+  # Backend Web Service (Docker)
   - type: web
     name: platform-backend
-    env: python
-    buildCommand: cd backend && pip install -r requirements.txt
-    startCommand: cd backend && uvicorn app:app --host 0.0.0.0 --port $PORT
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /api/health
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.13.0
+      - key: MONGO_URI
+        sync: false
+      - key: DATABASE_NAME
+        value: system_design_platform
