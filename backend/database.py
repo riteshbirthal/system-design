@@ -10,7 +10,7 @@ db = Database()
 async def connect_to_mongo():
     db.client = AsyncIOMotorClient(Config.MONGO_URI)
     db.db = db.client[Config.DATABASE_NAME]
-    print(f"Connected to MongoDB: {Config.MONGO_URI}")
+    print("Connected to MongoDB")
 
 async def close_mongo_connection():
     if db.client:

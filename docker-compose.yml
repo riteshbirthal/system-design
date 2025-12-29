@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: platform-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=${MONGO_URI:-mongodb://mongo:27017}
+      - DATABASE_NAME=${DATABASE_NAME:-system_design_platform}
+    depends_on:
+      - mongo
+    networks:
+      - platform-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: platform-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - platform-network
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:8.0
+    container_name: platform-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - platform-network
+    restart: unless-stopped
+
+networks:
+  platform-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
