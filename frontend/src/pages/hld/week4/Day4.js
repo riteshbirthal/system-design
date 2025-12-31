@@ -102,15 +102,62 @@ function Week4Day4() {
             <li><strong>Lower Memory Overhead:</strong> Simpler data model</li>
           </ul>
 
-          <h3 className="md-h3">Comparison</h3>
-          <table>
-            <tr><td><strong>Feature</strong></td><td><strong>Redis</strong></td><td><strong>Memcached</strong></td></tr>
-            <tr><td>Data Types</td><td>Rich structures</td><td>Strings only</td></tr>
-            <tr><td>Persistence</td><td>Yes (RDB+AOF)</td><td>No</td></tr>
-            <tr><td>Replication</td><td>Built-in</td><td>Not built-in</td></tr>
-            <tr><td>Clustering</td><td>Native</td><td>Client-side</td></tr>
-            <tr><td>Threading</td><td>Single-threaded*</td><td>Multi-threaded</td></tr>
-            <tr><td>Best For</td><td>Complex caching, sessions</td><td>Simple key-value</td></tr>
+          <h3 className="md-h3">Redis vs Memcached Comparison</h3>
+          <table className="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Redis</th>
+                <th>Memcached</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="feature-name">Data Types</td>
+                <td>Strings, Lists, Sets, Hashes, Sorted Sets, Streams</td>
+                <td>Strings only</td>
+              </tr>
+              <tr>
+                <td className="feature-name">Persistence</td>
+                <td><span className="check">✓</span> RDB snapshots + AOF logging</td>
+                <td><span className="cross">✗</span> No persistence</td>
+              </tr>
+              <tr>
+                <td className="feature-name">Replication</td>
+                <td><span className="check">✓</span> Built-in master-replica</td>
+                <td><span className="cross">✗</span> Not built-in</td>
+              </tr>
+              <tr>
+                <td className="feature-name">Clustering</td>
+                <td><span className="check">✓</span> Native cluster mode</td>
+                <td>Client-side sharding</td>
+              </tr>
+              <tr>
+                <td className="feature-name">Threading Model</td>
+                <td>Single-threaded (I/O threads in 6.0+)</td>
+                <td><span className="check">✓</span> Multi-threaded</td>
+              </tr>
+              <tr>
+                <td className="feature-name">Memory Efficiency</td>
+                <td>Higher overhead (data structures)</td>
+                <td><span className="check">✓</span> Lower overhead</td>
+              </tr>
+              <tr>
+                <td className="feature-name">Pub/Sub</td>
+                <td><span className="check">✓</span> Built-in</td>
+                <td><span className="cross">✗</span> Not supported</td>
+              </tr>
+              <tr>
+                <td className="feature-name">Lua Scripting</td>
+                <td><span className="check">✓</span> Server-side scripts</td>
+                <td><span className="cross">✗</span> Not supported</td>
+              </tr>
+              <tr>
+                <td className="feature-name">Best Use Case</td>
+                <td>Complex caching, sessions, leaderboards, queues</td>
+                <td>Simple key-value with high throughput</td>
+              </tr>
+            </tbody>
           </table>
 
           <h2 className="md-h2">Consistent Hashing</h2>

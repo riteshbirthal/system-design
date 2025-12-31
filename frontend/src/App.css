@@ -4,7 +4,7 @@
   flex-direction: column;
 }
 
-.main-content {
+.app > .main-content {
   flex: 1;
   padding: 40px 20px;
   max-width: 1200px;
@@ -12,11 +12,17 @@
   width: 100%;
 }
 
-/* Full-width pages override */
-.main-content:has(.hld-day-layout) {
+/* Full-width pages override - HLD Day pages */
+.app > .main-content:has(.hld-day-layout) {
   max-width: 100%;
   padding: 0;
   margin: 0;
+  overflow: visible;
+}
+
+/* Ensure HLD day layout takes full space */
+.hld-day-layout {
+  width: 100%;
 }
 
 .page-title {

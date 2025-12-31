@@ -39,13 +39,13 @@ function HLDCourse() {
       title: 'Database Systems & Data Management', 
       phase: 'Core Components', 
       days: [
-        { day: 1, topic: 'SQL Databases', type: 'content', concepts: 'Relational model, Normalization, Joins' },
-        { day: 2, topic: 'NoSQL Databases', type: 'content', concepts: 'Document, Key-Value, Column-family, Graph' },
-        { day: 3, topic: '☕ Mid-Week Practice', type: 'practice', concepts: 'Practice quiz on SQL and NoSQL databases' },
-        { day: 4, topic: 'Indexing & Query Optimization', type: 'content', concepts: 'B-trees, Hash indexes, EXPLAIN plans' },
-        { day: 5, topic: 'ACID & Transactions', type: 'content', concepts: 'Atomicity, Isolation levels, MVCC' },
-        { day: 6, topic: 'Database Replication', type: 'content', concepts: 'Master-slave, Multi-master, CRDTs' },
-        { day: 7, topic: '🎯 Weekly Hands-On', type: 'hands-on', concepts: 'Comprehensive quiz + Project: Design Social Media DB' },
+        { day: 1, topic: 'SQL vs NoSQL Databases', type: 'content', concepts: 'Relational vs Non-relational, ACID, Use cases' },
+        { day: 2, topic: 'Database Indexing', type: 'content', concepts: 'B-Tree, Hash Index, Composite indexes, Query optimization' },
+        { day: 3, topic: '☕ Mid-Week Practice', type: 'practice', concepts: 'Review SQL, NoSQL, Indexing concepts' },
+        { day: 4, topic: 'Database Replication', type: 'content', concepts: 'Master-Slave, Master-Master, Sync vs Async' },
+        { day: 5, topic: 'Database Sharding', type: 'content', concepts: 'Horizontal partitioning, Shard keys, Consistent hashing' },
+        { day: 6, topic: 'CAP Theorem', type: 'content', concepts: 'Consistency, Availability, Partition Tolerance' },
+        { day: 7, topic: '🎯 Weekly Hands-On', type: 'hands-on', concepts: 'Final quiz + Project: Design a Database for Twitter' },
       ]
     },
     { 
@@ -67,13 +67,11 @@ function HLDCourse() {
       title: 'Load Balancing & Message Queues', 
       phase: 'Core Components', 
       days: [
-        { day: 1, topic: 'Load Balancing Fundamentals', type: 'content', concepts: 'Layer 4 vs Layer 7, Health checks' },
-        { day: 2, topic: 'Load Balancing Algorithms', type: 'content', concepts: 'Round robin, Weighted, Least connections' },
-        { day: 3, topic: '☕ Mid-Week Practice', type: 'practice', concepts: 'Practice quiz on load balancing concepts' },
-        { day: 4, topic: 'Message Queue Fundamentals', type: 'content', concepts: 'Pub/Sub, Point-to-point, At-least-once' },
-        { day: 5, topic: 'Message Queue Technologies', type: 'content', concepts: 'Kafka, RabbitMQ, SQS, Event streaming' },
-        { day: 6, topic: 'Event-Driven Architecture', type: 'content', concepts: 'Event sourcing, CQRS, Saga pattern' },
-        { day: 7, topic: '🎯 Weekly Hands-On', type: 'hands-on', concepts: 'Comprehensive quiz + Project: Notification System' },
+        { day: 1, topic: 'Load Balancing Fundamentals', type: 'content', concepts: 'L4 vs L7, Algorithms, Health checks' },
+        { day: 2, topic: 'Message Queues', type: 'content', concepts: 'Async processing, Pub/Sub, Kafka, RabbitMQ' },
+        { day: 3, topic: 'Message Queue Basics', type: 'content', concepts: 'Pub/Sub, Queues, Producers, Consumers, Delivery Guarantees' },
+        { day: 4, topic: 'Apache Kafka Deep Dive', type: 'content', concepts: 'Topics, Partitions, Consumer Groups, Offsets' },
+        { day: 5, topic: 'Queue Patterns & Best Practices', type: 'content', concepts: 'DLQ, Retry, Idempotency, Circuit Breaker' },
       ]
     },
     { 
@@ -81,13 +79,11 @@ function HLDCourse() {
       title: 'CAP Theorem & Consistency Patterns', 
       phase: 'Distributed Systems', 
       days: [
-        { day: 1, topic: 'CAP Theorem', type: 'content', concepts: 'Consistency, Availability, Partition tolerance' },
-        { day: 2, topic: 'Consistency Models', type: 'content', concepts: 'Strong, Eventual, Causal consistency' },
-        { day: 3, topic: '☕ Mid-Week Practice', type: 'practice', concepts: 'Practice quiz on CAP and consistency models' },
-        { day: 4, topic: 'Distributed Consensus', type: 'content', concepts: 'Paxos, Raft, Leader election' },
-        { day: 5, topic: 'Distributed Transactions', type: 'content', concepts: '2PC, 3PC, Saga pattern' },
-        { day: 6, topic: 'Conflict Resolution', type: 'content', concepts: 'Vector clocks, CRDTs, Last-write-wins' },
-        { day: 7, topic: '🎯 Weekly Hands-On', type: 'hands-on', concepts: 'Comprehensive quiz + Project: Key-Value Store' },
+        { day: 1, topic: 'CAP Theorem', type: 'content', concepts: 'Consistency, Availability, Partition Tolerance' },
+        { day: 2, topic: 'Consistency Models', type: 'content', concepts: 'Strong, Eventual, Causal, Linearizability' },
+        { day: 3, topic: 'ACID vs BASE', type: 'content', concepts: 'Transactions, Atomicity, Isolation, Eventual Consistency' },
+        { day: 4, topic: 'Consensus Algorithms', type: 'content', concepts: 'Paxos, Raft, Leader Election, Quorum' },
+        { day: 5, topic: 'Designing for Consistency', type: 'content', concepts: 'Conflict Resolution, CRDTs, Saga Pattern, 2PC' },
       ]
     },
     { 
@@ -95,13 +91,11 @@ function HLDCourse() {
       title: 'Data Partitioning & Replication Strategies', 
       phase: 'Distributed Systems', 
       days: [
-        { day: 1, topic: 'Data Partitioning Basics', type: 'content', concepts: 'Horizontal vs Vertical partitioning' },
-        { day: 2, topic: 'Sharding Strategies', type: 'content', concepts: 'Hash-based, Range-based, Directory-based' },
-        { day: 3, topic: '☕ Mid-Week Practice', type: 'practice', concepts: 'Practice quiz on partitioning and sharding' },
-        { day: 4, topic: 'Partition Management', type: 'content', concepts: 'Rebalancing, Hot spots, Cross-shard queries' },
-        { day: 5, topic: 'Global Data Distribution', type: 'content', concepts: 'Geo-replication, Data locality, Latency' },
-        { day: 6, topic: 'Data Migration Strategies', type: 'content', concepts: 'Zero-downtime migration, Dual-write' },
-        { day: 7, topic: '🎯 Weekly Hands-On', type: 'hands-on', concepts: 'Comprehensive quiz + Project: Global User DB' },
+        { day: 1, topic: 'Data Partitioning Basics', type: 'content', concepts: 'Horizontal vs Vertical, Sharding, Partition Keys' },
+        { day: 2, topic: 'Sharding Techniques', type: 'content', concepts: 'Range, Hash, Directory-based, Geo Sharding' },
+        { day: 3, topic: 'Consistent Hashing', type: 'content', concepts: 'Hash Ring, Virtual Nodes, Rebalancing' },
+        { day: 4, topic: 'Replication Strategies', type: 'content', concepts: 'Master-Slave, Multi-Master, Sync vs Async' },
+        { day: 5, topic: 'Handling Distributed Data', type: 'content', concepts: 'Cross-Shard Queries, Distributed Transactions, Global Indexes' },
       ]
     },
     { 
@@ -109,13 +103,11 @@ function HLDCourse() {
       title: 'Microservices Architecture & Service Mesh', 
       phase: 'Architecture Patterns', 
       days: [
-        { day: 1, topic: 'Microservices Fundamentals', type: 'content', concepts: 'Monolith vs Microservices, Bounded contexts' },
-        { day: 2, topic: 'Service Discovery', type: 'content', concepts: 'Client-side, Server-side, Service registry' },
-        { day: 3, topic: '☕ Mid-Week Practice', type: 'practice', concepts: 'Practice quiz on microservices basics' },
-        { day: 4, topic: 'API Gateway', type: 'content', concepts: 'Routing, Rate limiting, Authentication' },
-        { day: 5, topic: 'Service Mesh', type: 'content', concepts: 'Sidecar pattern, Istio, Envoy' },
-        { day: 6, topic: 'Microservices Patterns', type: 'content', concepts: 'Circuit breaker, Bulkhead, Retry patterns' },
-        { day: 7, topic: '🎯 Weekly Hands-On', type: 'hands-on', concepts: 'Comprehensive quiz + Project: E-commerce System' },
+        { day: 1, topic: 'Microservices vs Monoliths', type: 'content', concepts: 'Architectural differences, trade-offs, when to choose' },
+        { day: 2, topic: 'Service Discovery & Communication', type: 'content', concepts: 'Service registry, client-side vs server-side discovery' },
+        { day: 3, topic: 'API Gateway Pattern', type: 'content', concepts: 'Routing, authentication, rate limiting, aggregation' },
+        { day: 4, topic: 'Service Mesh & Sidecars', type: 'content', concepts: 'Istio, Envoy, mTLS, traffic management' },
+        { day: 5, topic: 'Resilience Patterns', type: 'content', concepts: 'Circuit breaker, bulkhead, retry, saga pattern' },
       ]
     },
     { 
@@ -124,10 +116,10 @@ function HLDCourse() {
       phase: 'Architecture Patterns', 
       days: [
         { day: 1, topic: 'Authentication Fundamentals', type: 'content', concepts: 'AuthN vs AuthZ, MFA, passwordless, session management' },
-        { day: 2, topic: 'OAuth 2.0 & OpenID Connect', type: 'content', concepts: 'Grant types, PKCE, tokens, scopes' },
-        { day: 3, topic: 'JSON Web Tokens (JWT)', type: 'content', concepts: 'JWT structure, signing, validation, best practices' },
-        { day: 4, topic: 'API Security', type: 'content', concepts: 'Rate limiting, input validation, CORS, security headers' },
-        { day: 5, topic: 'Zero Trust Architecture', type: 'content', concepts: 'Defense in depth, mTLS, secrets management' },
+        { day: 2, topic: 'OAuth 2.0 & JWT', type: 'content', concepts: 'OAuth flows, OpenID Connect, JWT structure, token management' },
+        { day: 3, topic: 'Authorization & Access Control', type: 'content', concepts: 'RBAC, ABAC, policies, least privilege' },
+        { day: 4, topic: 'API Security & OWASP', type: 'content', concepts: 'API vulnerabilities, OWASP Top 10, security headers, rate limiting' },
+        { day: 5, topic: 'Zero Trust & Secrets Management', type: 'content', concepts: 'Zero trust principles, Vault, secrets rotation, mTLS' },
       ]
     },
     { 
@@ -136,10 +128,10 @@ function HLDCourse() {
       phase: 'Operations', 
       days: [
         { day: 1, topic: 'Three Pillars of Observability', type: 'content', concepts: 'Metrics, Logs, Traces - understanding system behavior' },
-        { day: 2, topic: 'Metrics Deep Dive', type: 'content', concepts: 'Counter, Gauge, Histogram, Prometheus, Grafana' },
-        { day: 3, topic: 'Logging Best Practices', type: 'content', concepts: 'Structured logging, log levels, correlation IDs' },
-        { day: 4, topic: 'Distributed Tracing', type: 'content', concepts: 'Spans, traces, Jaeger, OpenTelemetry' },
-        { day: 5, topic: 'Alerting & SRE Practices', type: 'content', concepts: 'Golden signals, SLOs, error budgets, on-call' },
+        { day: 2, topic: 'Metrics & Monitoring Methods', type: 'content', concepts: 'Golden Signals, RED, USE methods, Prometheus, Grafana' },
+        { day: 3, topic: 'Logging & Distributed Tracing', type: 'content', concepts: 'Structured logging, ELK stack, Jaeger, trace context propagation' },
+        { day: 4, topic: 'Alerting & SLOs', type: 'content', concepts: 'SLIs, SLOs, SLAs, error budgets, alert fatigue' },
+        { day: 5, topic: 'OpenTelemetry & Observability Tools', type: 'content', concepts: 'OTel, Prometheus, Grafana, unified observability' },
       ]
     },
     { 
@@ -148,10 +140,10 @@ function HLDCourse() {
       phase: 'Advanced Infrastructure', 
       days: [
         { day: 1, topic: 'Load Balancing Fundamentals', type: 'content', concepts: 'Types, algorithms, VIP, upstream servers' },
-        { day: 2, topic: 'Layer 4 vs Layer 7', type: 'content', concepts: 'Transport vs Application, protocol awareness' },
-        { day: 3, topic: 'Health Checks & Session Persistence', type: 'content', concepts: 'Active/passive checks, sticky sessions' },
-        { day: 4, topic: 'SSL/TLS Termination & GSLB', type: 'content', concepts: 'SSL offloading, geo-routing, CDN integration' },
-        { day: 5, topic: 'Load Balancer Implementations', type: 'content', concepts: 'NGINX, HAProxy, AWS ELB, Envoy' },
+        { day: 2, topic: 'Layer 4 vs Layer 7 Load Balancing', type: 'content', concepts: 'Transport vs Application layer, protocol awareness' },
+        { day: 3, topic: 'Health Checks & Session Persistence', type: 'content', concepts: 'Active/passive checks, sticky sessions, connection draining' },
+        { day: 4, topic: 'SSL/TLS Termination & GSLB', type: 'content', concepts: 'SSL offloading, geo-routing, global load balancing' },
+        { day: 5, topic: 'Load Balancer Implementations', type: 'content', concepts: 'NGINX, HAProxy, AWS ELB, Envoy, Traefik' },
       ]
     },
     { 
@@ -183,11 +175,11 @@ function HLDCourse() {
       title: 'CDNs & Distributed Caching', 
       phase: 'Advanced Infrastructure', 
       days: [
-        { day: 1, topic: 'CDN Fundamentals', type: 'content', concepts: 'Edge servers, PoPs, cache hierarchy' },
-        { day: 2, topic: 'CDN Caching Strategies', type: 'content', concepts: 'Cache-Control, TTL, invalidation, versioning' },
-        { day: 3, topic: 'Distributed Cache Architecture', type: 'content', concepts: 'Cache-aside, read/write-through, consistent hashing' },
-        { day: 4, topic: 'Redis vs Memcached', type: 'content', concepts: 'Data structures, persistence, clustering, use cases' },
-        { day: 5, topic: 'Cache Patterns & Best Practices', type: 'content', concepts: 'Stampede prevention, warming, monitoring' },
+        { day: 1, topic: 'CDN Fundamentals', type: 'content', concepts: 'Edge servers, PoPs, content distribution' },
+        { day: 2, topic: 'CDN Caching Strategies', type: 'content', concepts: 'TTL, cache keys, invalidation, push vs pull' },
+        { day: 3, topic: 'Distributed Cache Architecture', type: 'content', concepts: 'Redis, Memcached, cache topologies' },
+        { day: 4, topic: 'Redis vs Memcached', type: 'content', concepts: 'Feature comparison, data types, persistence, clustering' },
+        { day: 5, topic: 'Cache Patterns & Best Practices', type: 'content', concepts: 'Thundering herd, cache stampede, cache warming' },
       ]
     },
   ];
@@ -224,11 +216,11 @@ function HLDCourse() {
             <span className="stat-label">Weeks</span>
           </div>
           <div className="stat-item">
-            <span className="stat-value">72</span>
+            <span className="stat-value">78</span>
             <span className="stat-label">Days</span>
           </div>
           <div className="stat-item">
-            <span className="stat-value">150+</span>
+            <span className="stat-value">100+</span>
             <span className="stat-label">Hours</span>
           </div>
         </div>
