@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useHLDDayState } from '../../../hooks/usePersistedState';
 import '../../HLDDay.css';
 import '../ArticleContent.css';
 
 function Week4Day3() {
-  const [activeTab, setActiveTab] = useState('quiz');
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selectedAnswers, setSelectedAnswers] = useState({});
-  const [showResults, setShowResults] = useState(false);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
   const weekNum = 4;
   const dayNum = 3;
+  
+  const {
+    activeTab, setActiveTab,
+    sidebarCollapsed, setSidebarCollapsed,
+    mobileMenuOpen, setMobileMenuOpen,
+    selectedAnswers, setSelectedAnswers,
+    showResults, setShowResults,
+    currentQuestionIndex, setCurrentQuestionIndex,
+    resetQuiz
+  } = useHLDDayState(weekNum, dayNum);
   const topic = "Mid-Week Practice";
   const concepts = "Practice quiz on caching basics and eviction";
 

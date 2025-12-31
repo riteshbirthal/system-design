@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useHLDDayState } from '../../../hooks/usePersistedState';
 import '../../HLDDay.css';
 import '../ArticleContent.css';
 
 function Week4Day6() {
-  const [activeTab, setActiveTab] = useState('article');
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selectedAnswers, setSelectedAnswers] = useState({});
-  const [showResults, setShowResults] = useState(false);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
   const weekNum = 4, dayNum = 6;
   const topic = "Performance Optimization";
+  
+  const {
+    activeTab, setActiveTab,
+    sidebarCollapsed, setSidebarCollapsed,
+    mobileMenuOpen, setMobileMenuOpen,
+    selectedAnswers, setSelectedAnswers,
+    showResults, setShowResults,
+    currentQuestionIndex, setCurrentQuestionIndex,
+    resetQuiz
+  } = useHLDDayState(weekNum, dayNum);
   const concepts = "Profiling, Bottlenecks, N+1 queries";
 
   const tabs = [

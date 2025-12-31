@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useHLDCourseState } from '../hooks/usePersistedState';
 import './HLDCourse.css';
 
 function HLDCourse() {
-  const [expandedWeek, setExpandedWeek] = useState(1);
+  const { expandedWeek, setExpandedWeek } = useHLDCourseState();
 
   const weeks = [
     { 

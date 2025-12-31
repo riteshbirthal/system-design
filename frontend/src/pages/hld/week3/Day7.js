@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useHLDDayState } from '../../../hooks/usePersistedState';
 import '../../HLDDay.css';
 import '../ArticleContent.css';
 
 function Week3Day7() {
-  const [activeTab, setActiveTab] = useState('article');
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selectedAnswers, setSelectedAnswers] = useState({});
-  const [showResults, setShowResults] = useState(false);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
   const weekNum = 3, dayNum = 7, topic = "Weekly Hands-On", concepts = "Final quiz + Project: Design a Database for Twitter";
+  
+  const {
+    activeTab, setActiveTab,
+    sidebarCollapsed, setSidebarCollapsed,
+    mobileMenuOpen, setMobileMenuOpen,
+    selectedAnswers, setSelectedAnswers,
+    showResults, setShowResults,
+    currentQuestionIndex, setCurrentQuestionIndex,
+    resetQuiz
+  } = useHLDDayState(weekNum, dayNum);
   const tabs = [{ id: 'article', label: 'Summary', icon: '📖', available: true, color: '#2196F3' },{ id: 'quiz', label: 'Final Quiz', icon: '✅', available: true, color: '#9C27B0' },{ id: 'assignment', label: 'Project', icon: '📝', available: true, color: '#FF9800' }];
 
   const quizQuestions = [
@@ -51,7 +55,7 @@ function Week3Day7() {
   const renderQuizContent = () => {
     const total = quizQuestions.length, curr = quizQuestions[currentQuestionIndex];
     if (showResults) { const score = quizQuestions.filter(q => selectedAnswers[q.id] === q.correct).length; return (<div className="content-panel quiz-panel"><div className="quiz-container"><div className="quiz-results"><div className="results-header"><h2>Week 3 Complete!</h2><div className="score-circle"><span className="score-value">{Math.round((score/total)*100)}%</span></div><p>{score}/{total}</p></div><div className="results-review">{quizQuestions.map((q,i)=>(<div key={q.id} className={`review-item ${selectedAnswers[q.id]===q.correct?'correct':'incorrect'}`}><p>Q{i+1}: {q.question}</p><div className="explanation">{q.explanation}</div></div>))}</div><button className="retry-btn" onClick={()=>{setSelectedAnswers({});setShowResults(false);setCurrentQuestionIndex(0);}}>Retry</button></div></div></div>); }
-    return (<div className="content-panel quiz-panel"><div className="quiz-container"><header className="quiz-header"><h1>Week 3 Final Quiz</h1></header><div className="quiz-question-single"><div className="question-card"><p className="question-text">Q{currentQuestionIndex+1}: {curr.question}</p><div className="options-list">{curr.options.map((o,i)=>(<label key={i} className={`option-item ${selectedAnswers[curr.id]===i?'selected':''}`}><input type="radio" checked={selectedAnswers[curr.id]===i} onChange={()=>handleAnswerSelect(curr.id,i)}/><span className="option-letter">{String.fromCharCode(65+i)}</span><span className="option-text">{o}</span></label>))}</div></div></div><div className="quiz-navigation"><button className="nav-btn prev" disabled={currentQuestionIndex===0} onClick={()=>setCurrentQuestionIndex(i=>i-1)}>&lt;&lt;</button><div className="question-dots">{quizQuestions.map((q,i)=>(<button key={i} className={`dot ${i===currentQuestionIndex?'active':''}`} onClick={()=>setCurrentQuestionIndex(i)}>{i+1}</button>))}</div>{currentQuestionIndex===total-1?<button className="nav-btn submit" onClick={()=>setShowResults(true)}>Submit</button>:<button className="nav-btn next" onClick={()=>setCurrentQuestionIndex(i=>i+1)}>&gt;&gt;</button>}</div></div></div>);
+    return (<div className="content-panel quiz-panel"><div className="quiz-container"><header className="quiz-header"><h1>Week 3 Final Quiz</h1><div className="quiz-stats"><div className="stat-card"><span className="stat-value">{total}</span><span className="stat-label">Questions</span></div></div></header><div className="quiz-question-single"><div className="question-card"><p className="question-text">Q{currentQuestionIndex+1}: {curr.question}</p><div className="options-list">{curr.options.map((o,i)=>(<label key={i} className={`option-item ${selectedAnswers[curr.id]===i?'selected':''}`}><input type="radio" checked={selectedAnswers[curr.id]===i} onChange={()=>handleAnswerSelect(curr.id,i)}/><span className="option-letter">{String.fromCharCode(65+i)}</span><span className="option-text">{o}</span></label>))}</div></div></div><div className="quiz-navigation"><button className="nav-btn prev" disabled={currentQuestionIndex===0} onClick={()=>setCurrentQuestionIndex(i=>i-1)}>&lt;&lt;</button><div className="question-dots">{quizQuestions.map((q,i)=>(<button key={i} className={`dot ${i===currentQuestionIndex?'active':''}`} onClick={()=>setCurrentQuestionIndex(i)}>{i+1}</button>))}</div>{currentQuestionIndex===total-1?<button className="nav-btn submit" onClick={()=>setShowResults(true)}>Submit</button>:<button className="nav-btn next" onClick={()=>setCurrentQuestionIndex(i=>i+1)}>&gt;&gt;</button>}</div></div></div>);
   };
 
   const renderAssignmentContent = () => (<div className="content-panel assignment-panel"><div className="assignment-container"><header className="assignment-header"><div className="assignment-title-row"><h1>Design Database for Twitter</h1><span className="difficulty-badge advanced">Advanced</span></div><p className="assignment-description">Design the database architecture for a Twitter-like social media platform.</p></header><div className="assignment-body"><h3>Functional Requirements</h3><ul className="requirements-list"><li><span className="req-number">1</span><span className="req-text">Users can post tweets (280 chars)</span></li><li><span className="req-number">2</span><span className="req-text">Users can follow other users</span></li><li><span className="req-number">3</span><span className="req-text">Home timeline shows followed users' tweets</span></li><li><span className="req-number">4</span><span className="req-text">Search tweets by hashtag</span></li></ul><h3>Non-Functional Requirements</h3><ul className="requirements-list"><li><span className="req-number">5</span><span className="req-text">500M users, 200M DAU</span></li><li><span className="req-number">6</span><span className="req-text">Timeline load &lt;200ms</span></li></ul><h3>Deliverables</h3><ul className="requirements-list"><li><span className="req-number">7</span><span className="req-text">Database schema design</span></li><li><span className="req-number">8</span><span className="req-text">Sharding strategy for tweets</span></li><li><span className="req-number">9</span><span className="req-text">Replication strategy</span></li><li><span className="req-number">10</span><span className="req-text">Indexing strategy for search</span></li></ul></div><div className="assignment-actions"><button className="start-btn">Start Project</button></div></div></div>);

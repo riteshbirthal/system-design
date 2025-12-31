@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useHLDDayState } from '../../../hooks/usePersistedState';
 import '../../HLDDay.css';
 import '../ArticleContent.css';
 
 function Week1Day3() {
-  const [activeTab, setActiveTab] = useState('quiz');
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selectedAnswers, setSelectedAnswers] = useState({});
-  const [showResults, setShowResults] = useState(false);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
   const weekNum = 1, dayNum = 3, topic = "Mid-Week Practice", concepts = "Practice quiz on Days 1-2 concepts";
+  
+  const {
+    activeTab, setActiveTab,
+    sidebarCollapsed, setSidebarCollapsed,
+    mobileMenuOpen, setMobileMenuOpen,
+    selectedAnswers, setSelectedAnswers,
+    showResults, setShowResults,
+    currentQuestionIndex, setCurrentQuestionIndex,
+    resetQuiz
+  } = useHLDDayState(weekNum, dayNum);
   const tabs = [{ id: 'video', label: 'Video Lesson', icon: '🎬', available: false, color: '#E91E63' },{ id: 'article', label: 'Reading Material', icon: '📖', available: true, color: '#2196F3' },{ id: 'quiz', label: 'Practice Quiz', icon: '✅', available: true, color: '#9C27B0' },{ id: 'assignment', label: 'Assignment', icon: '📝', available: false, color: '#FF9800' }];
 
   const quizQuestions = [

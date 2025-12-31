@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useHLDDayState } from '../../../hooks/usePersistedState';
 import '../../HLDDay.css';
 import '../ArticleContent.css';
 
 function Week1Day7() {
-  const [activeTab, setActiveTab] = useState('article');
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selectedAnswers, setSelectedAnswers] = useState({});
-  const [showResults, setShowResults] = useState(false);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
   const weekNum = 1, dayNum = 7, topic = "Weekly Hands-On", concepts = "Comprehensive quiz + Project: Design a Pastebin";
+  
+  const {
+    activeTab, setActiveTab,
+    sidebarCollapsed, setSidebarCollapsed,
+    mobileMenuOpen, setMobileMenuOpen,
+    selectedAnswers, setSelectedAnswers,
+    showResults, setShowResults,
+    currentQuestionIndex, setCurrentQuestionIndex,
+    resetQuiz
+  } = useHLDDayState(weekNum, dayNum);
   const tabs = [{ id: 'video', label: 'Video', icon: '🎬', available: false, color: '#E91E63' },{ id: 'article', label: 'Project Brief', icon: '📖', available: true, color: '#2196F3' },{ id: 'quiz', label: 'Final Quiz', icon: '✅', available: true, color: '#9C27B0' },{ id: 'assignment', label: 'Project', icon: '📝', available: true, color: '#FF9800' }];
 
   const quizQuestions = [
