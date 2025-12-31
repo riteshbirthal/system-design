@@ -50,7 +50,7 @@ function Quizzes() {
               </div>
             </div>
             <div className="quiz-category">{quiz.category}</div>
-            <div className="take-quiz-btn">Take Quiz &rarr;</div>
+            <div className="take-quiz-btn">Take Quiz &gt;&gt;</div>
           </Link>
         ))}
       </div>

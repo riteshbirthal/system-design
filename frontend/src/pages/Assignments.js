@@ -60,7 +60,7 @@ function Assignments() {
                 <span className="score">Max Score: {assignment.max_score}</span>
               </div>
             </div>
-            <div className="start-btn">Start Assignment &rarr;</div>
+            <div className="start-btn">Start Assignment &gt;&gt;</div>
           </Link>
         ))}
       </div>

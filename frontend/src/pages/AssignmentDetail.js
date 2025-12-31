@@ -43,7 +43,7 @@ function AssignmentDetail() {
 
   return (
     <div className="assignment-detail">
-      <Link to="/assignments" className="back-link">&larr; Back to Assignments</Link>
+      <Link to="/assignments" className="back-link">&lt;&lt; Back to Assignments</Link>
 
       <div className="assignment-content">
         <header className="detail-header">
@@ -90,7 +90,7 @@ function AssignmentDetail() {
             <h3>Assignment Submitted!</h3>
             <p>Your solution has been submitted successfully.</p>
             <Link to="/assignments" className="btn btn-secondary">
-              Back to Assignments
+              &lt;&lt; Back to Assignments
             </Link>
           </div>
         )}

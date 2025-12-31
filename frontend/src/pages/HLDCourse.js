@@ -120,16 +120,74 @@ function HLDCourse() {
     },
     { 
       week: 9, 
-      title: 'API Design & Communication Patterns', 
+      title: 'Security & Authentication', 
       phase: 'Architecture Patterns', 
       days: [
-        { day: 1, topic: 'API Design Best Practices', type: 'content', concepts: 'Idempotency, Backward compatibility' },
-        { day: 2, topic: 'API Security', type: 'content', concepts: 'OAuth 2.0, JWT, API keys, Rate limiting' },
-        { day: 3, topic: '☕ Mid-Week Practice', type: 'practice', concepts: 'Practice quiz on API design and security' },
-        { day: 4, topic: 'Inter-Service Communication', type: 'content', concepts: 'Sync vs Async, RPC, Message passing' },
-        { day: 5, topic: 'API Versioning & Documentation', type: 'content', concepts: 'Semantic versioning, OpenAPI, Swagger' },
-        { day: 6, topic: 'API Performance', type: 'content', concepts: 'Pagination, Compression, Caching' },
-        { day: 7, topic: '🎯 Weekly Hands-On', type: 'hands-on', concepts: 'Comprehensive quiz + Project: Public API Platform' },
+        { day: 1, topic: 'Authentication Fundamentals', type: 'content', concepts: 'AuthN vs AuthZ, MFA, passwordless, session management' },
+        { day: 2, topic: 'OAuth 2.0 & OpenID Connect', type: 'content', concepts: 'Grant types, PKCE, tokens, scopes' },
+        { day: 3, topic: 'JSON Web Tokens (JWT)', type: 'content', concepts: 'JWT structure, signing, validation, best practices' },
+        { day: 4, topic: 'API Security', type: 'content', concepts: 'Rate limiting, input validation, CORS, security headers' },
+        { day: 5, topic: 'Zero Trust Architecture', type: 'content', concepts: 'Defense in depth, mTLS, secrets management' },
+      ]
+    },
+    { 
+      week: 10, 
+      title: 'Monitoring, Logging & Observability', 
+      phase: 'Operations', 
+      days: [
+        { day: 1, topic: 'Three Pillars of Observability', type: 'content', concepts: 'Metrics, Logs, Traces - understanding system behavior' },
+        { day: 2, topic: 'Metrics Deep Dive', type: 'content', concepts: 'Counter, Gauge, Histogram, Prometheus, Grafana' },
+        { day: 3, topic: 'Logging Best Practices', type: 'content', concepts: 'Structured logging, log levels, correlation IDs' },
+        { day: 4, topic: 'Distributed Tracing', type: 'content', concepts: 'Spans, traces, Jaeger, OpenTelemetry' },
+        { day: 5, topic: 'Alerting & SRE Practices', type: 'content', concepts: 'Golden signals, SLOs, error budgets, on-call' },
+      ]
+    },
+    { 
+      week: 11, 
+      title: 'Load Balancing Deep Dive', 
+      phase: 'Advanced Infrastructure', 
+      days: [
+        { day: 1, topic: 'Load Balancing Fundamentals', type: 'content', concepts: 'Types, algorithms, VIP, upstream servers' },
+        { day: 2, topic: 'Layer 4 vs Layer 7', type: 'content', concepts: 'Transport vs Application, protocol awareness' },
+        { day: 3, topic: 'Health Checks & Session Persistence', type: 'content', concepts: 'Active/passive checks, sticky sessions' },
+        { day: 4, topic: 'SSL/TLS Termination & GSLB', type: 'content', concepts: 'SSL offloading, geo-routing, CDN integration' },
+        { day: 5, topic: 'Load Balancer Implementations', type: 'content', concepts: 'NGINX, HAProxy, AWS ELB, Envoy' },
+      ]
+    },
+    { 
+      week: 12, 
+      title: 'Message Queues & Event-Driven Architecture', 
+      phase: 'Advanced Infrastructure', 
+      days: [
+        { day: 1, topic: 'Message Queue Fundamentals', type: 'content', concepts: 'Pub/Sub, Point-to-point, delivery guarantees' },
+        { day: 2, topic: 'Apache Kafka Deep Dive', type: 'content', concepts: 'Topics, partitions, consumers, exactly-once' },
+        { day: 3, topic: 'RabbitMQ & Exchanges', type: 'content', concepts: 'AMQP, exchanges, bindings, routing' },
+        { day: 4, topic: 'Event-Driven Patterns', type: 'content', concepts: 'Event sourcing, CQRS, Saga pattern, outbox' },
+        { day: 5, topic: 'Choosing Message Queues', type: 'content', concepts: 'Kafka vs RabbitMQ vs SQS, selection guide' },
+      ]
+    },
+    { 
+      week: 13, 
+      title: 'API Gateways & Proxies', 
+      phase: 'Advanced Infrastructure', 
+      days: [
+        { day: 1, topic: 'API Gateway Fundamentals', type: 'content', concepts: 'Single entry point, routing, cross-cutting concerns' },
+        { day: 2, topic: 'Gateway Features', type: 'content', concepts: 'Rate limiting, auth, transformation, circuit breaker' },
+        { day: 3, topic: 'Gateway Patterns', type: 'content', concepts: 'BFF, aggregation, offloading, routing patterns' },
+        { day: 4, topic: 'Gateway Security', type: 'content', concepts: 'OAuth at gateway, JWT validation, CORS, WAF' },
+        { day: 5, topic: 'Gateway Implementations', type: 'content', concepts: 'Kong, AWS API Gateway, NGINX, Envoy' },
+      ]
+    },
+    { 
+      week: 14, 
+      title: 'CDNs & Distributed Caching', 
+      phase: 'Advanced Infrastructure', 
+      days: [
+        { day: 1, topic: 'CDN Fundamentals', type: 'content', concepts: 'Edge servers, PoPs, cache hierarchy' },
+        { day: 2, topic: 'CDN Caching Strategies', type: 'content', concepts: 'Cache-Control, TTL, invalidation, versioning' },
+        { day: 3, topic: 'Distributed Cache Architecture', type: 'content', concepts: 'Cache-aside, read/write-through, consistent hashing' },
+        { day: 4, topic: 'Redis vs Memcached', type: 'content', concepts: 'Data structures, persistence, clustering, use cases' },
+        { day: 5, topic: 'Cache Patterns & Best Practices', type: 'content', concepts: 'Stampede prevention, warming, monitoring' },
       ]
     },
   ];
@@ -143,7 +201,9 @@ function HLDCourse() {
       'Fundamentals': '#2563eb',
       'Core Components': '#7c3aed',
       'Distributed Systems': '#dc2626',
-      'Architecture Patterns': '#0891b2'
+      'Architecture Patterns': '#0891b2',
+      'Operations': '#059669',
+      'Advanced Infrastructure': '#d97706'
     };
     return colors[phase] || '#64748b';
   };
@@ -160,15 +220,15 @@ function HLDCourse() {
         </div>
         <div className="hld-stats">
           <div className="stat-item">
-            <span className="stat-value">9</span>
+            <span className="stat-value">14</span>
             <span className="stat-label">Weeks</span>
           </div>
           <div className="stat-item">
-            <span className="stat-value">63</span>
+            <span className="stat-value">72</span>
             <span className="stat-label">Days</span>
           </div>
           <div className="stat-item">
-            <span className="stat-value">120+</span>
+            <span className="stat-value">150+</span>
             <span className="stat-label">Hours</span>
           </div>
         </div>
@@ -214,7 +274,7 @@ function HLDCourse() {
                             </div>
                             {isPractice && <span className="day-type-indicator practice">☕</span>}
                             {isHandsOn && <span className="day-type-indicator hands-on">🎯</span>}
-                            <span className="day-arrow-link">→</span>
+                            <span className="day-arrow-link">&gt;&gt;</span>
                           </div>
                         </Link>
                       );

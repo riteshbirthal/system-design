@@ -38,7 +38,7 @@ function ContentDetail() {
 
   return (
     <div className="content-detail">
-      <Link to="/content" className="back-link">&larr; Back to Content</Link>
+      <Link to="/content" className="back-link">&lt;&lt; Back to Content</Link>
 
       <article className="article">
         <header className="article-header">

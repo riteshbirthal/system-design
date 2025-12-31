@@ -66,3 +66,6 @@ backend/seed_scripts/
 # Misc
 *.bak
 *.tmp
+temp
+system_design_content
+course

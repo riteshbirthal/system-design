@@ -16,7 +16,7 @@ function Navbar() {
       <div className="navbar-container">
         <Link to="/" className="navbar-brand">
           <span className="brand-icon">&#9881;</span>
-          System Design
+          BitByBitGo
         </Link>
         <div className="navbar-links">
           <Link to="/hld" className={`nav-link ${isActive('/hld') ? 'active' : ''}`}>

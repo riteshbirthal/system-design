@@ -59,11 +59,11 @@ function Home() {
           <span>Recommended Order:</span>
           <div className="path-flow">
             <span className="path-step">1. HLD</span>
-            <span className="path-arrow">→</span>
+            <span className="path-arrow">&gt;&gt;</span>
             <span className="path-step">2. LLD</span>
-            <span className="path-arrow">→</span>
+            <span className="path-arrow">&gt;&gt;</span>
             <span className="path-step">3. HLD Practice</span>
-            <span className="path-arrow">→</span>
+            <span className="path-arrow">&gt;&gt;</span>
             <span className="path-step">4. LLD Practice</span>
           </div>
         </div>
@@ -95,7 +95,7 @@ function Home() {
               </div>
               <div className="track-footer" style={{ borderTopColor: track.color }}>
                 <span>Start Learning</span>
-                <span className="arrow">→</span>
+                <span className="arrow">&gt;&gt;</span>
               </div>
             </Link>
           ))}

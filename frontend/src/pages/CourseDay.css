@@ -204,13 +204,7 @@
   font-weight: 600;
 }
 
-.nav-btn.prev::before {
-  content: '← ';
-}
 
-.nav-btn.next::after {
-  content: ' →';
-}
 
 .loading,
 .error {

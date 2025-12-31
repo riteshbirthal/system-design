@@ -28,7 +28,7 @@ function TutorialDetail() {
 
   return (
     <div className="tutorial-detail">
-      <Link to="/tutorials" className="back-link">&larr; Back to Tutorials</Link>
+      <Link to="/tutorials" className="back-link">&lt;&lt; Back to Tutorials</Link>
       
       <div className="video-container">
         <div className="video-placeholder">

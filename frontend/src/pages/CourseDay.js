@@ -34,7 +34,7 @@ function CourseDay() {
   return (
     <div className="course-day-container">
       <div className="day-header">
-        <Link to="/course" className="back-link">Back to Course</Link>
+        <Link to="/course" className="back-link">&lt;&lt; Back to Course</Link>
         <h1>Week {week}, Day {day}: {dayData.topic}</h1>
       </div>
 
@@ -146,12 +146,12 @@ function CourseDay() {
       <div className="day-navigation">
         {parseInt(day) > 1 && (
           <Link to={`/course/week/${week}/day/${parseInt(day) - 1}`} className="nav-btn prev">
-            Previous Day
+            &lt;&lt; Previous Day
           </Link>
         )}
         {parseInt(day) < 5 && (
           <Link to={`/course/week/${week}/day/${parseInt(day) + 1}`} className="nav-btn next">
-            Next Day
+            Next Day &gt;&gt;
           </Link>
         )}
       </div>
