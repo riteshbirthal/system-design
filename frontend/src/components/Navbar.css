@@ -146,7 +146,7 @@
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  z-index: 997;
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -167,15 +167,17 @@
   background: var(--bg-primary);
   border-top: 1px solid var(--border-color);
   box-shadow: var(--shadow-lg);
-  z-index: 998;
-  transform: translateY(-100%);
-  transition: transform 0.3s ease;
+  z-index: 999;
   max-height: calc(100vh - 64px);
   overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .mobile-nav-menu.open {
-  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
 }
 
 .mobile-nav-links {
@@ -219,6 +221,8 @@
   border-radius: 10px;
   color: var(--text-primary);
   font-weight: 500;
+  position: relative;
+  z-index: 1000;
 }
 
 .mobile-theme-toggle button {
@@ -233,15 +237,48 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 1001;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .mobile-theme-toggle button:hover {
   transform: scale(1.1);
 }
 
+.mobile-theme-toggle button:active {
+  transform: scale(0.95);
+}
+
 /* ==================== RESPONSIVE BREAKPOINTS ==================== */
 @media (max-width: 900px) {
+  .navbar {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .navbar-brand {
+    color: var(--text-primary);
+  }
+
+  .hamburger-icon,
+  .hamburger-icon::before,
+  .hamburger-icon::after {
+    background: #000000;
+  }
+
+  [data-theme="dark"] .hamburger-icon,
+  [data-theme="dark"] .hamburger-icon::before,
+  [data-theme="dark"] .hamburger-icon::after {
+    background: #ffffff;
+  }
+
   .navbar-links {
+    display: none;
+  }
+
+  .theme-toggle {
     display: none;
   }
 

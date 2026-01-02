@@ -99,7 +99,13 @@ function Navbar() {
           ))}
           <div className="mobile-theme-toggle">
             <span>Theme: {theme === 'light' ? 'Light' : 'Dark'}</span>
-            <button onClick={toggleTheme}>
+            <button 
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleTheme();
+              }}
+              type="button"
+            >
               {theme === 'light' ? '🌙' : '☀️'}
             </button>
           </div>
