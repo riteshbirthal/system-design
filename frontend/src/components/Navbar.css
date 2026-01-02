@@ -253,27 +253,6 @@
 
 /* ==================== RESPONSIVE BREAKPOINTS ==================== */
 @media (max-width: 900px) {
-  .navbar {
-    background: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-color);
-  }
-
-  .navbar-brand {
-    color: var(--text-primary);
-  }
-
-  .hamburger-icon,
-  .hamburger-icon::before,
-  .hamburger-icon::after {
-    background: #000000;
-  }
-
-  [data-theme="dark"] .hamburger-icon,
-  [data-theme="dark"] .hamburger-icon::before,
-  [data-theme="dark"] .hamburger-icon::after {
-    background: #ffffff;
-  }
-
   .navbar-links {
     display: none;
   }
